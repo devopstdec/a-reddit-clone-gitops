@@ -27,7 +27,7 @@ pipeline {
          stage("Push the changed deployment file to GitHub") {
             steps {
                 sh """
-                    git config --global user.name "devopstdec"
+                   # git config --global user.name "devopstdec"
                    # git config --global user.email "devopstdec@gmail.com"
                     git add deployment.yaml
                     git commit -m "Updated Deployment Manifest"
