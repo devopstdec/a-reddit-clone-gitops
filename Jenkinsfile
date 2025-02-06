@@ -12,6 +12,7 @@ pipeline {
          stage("Checkout from SCM") {
              steps {
                      git branch: 'main', credentialsId: 'github', url: 'https://github.com/devopstdec/a-reddit-clone-gitops'
+                     
              }
          }
          stage("Update the Deployment Tags") {
@@ -32,7 +33,7 @@ pipeline {
                     git commit -m "Updated Deployment Manifest"
                 """
                 withCredentials([gitUsernamePassword(credentialsId: 'github', gitToolName: 'Default')]) {
-                    sh "git push https://github.com/devopstdec/a-reddit-clone-gitops main"
+                    sh "git push https://devopstdec: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@github.com/devopstdec/a-reddit-clone-gitops main"
                 }
             }
          }
